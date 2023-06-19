@@ -156,19 +156,18 @@
 	}
 
 	function hints() {
-		if(turn==='B') turnNow = 0;
-		else if(turn==='C') turnNow = 1;
-		else if(turn==='D') turnNow = 2;
-		else if (turn === 'A') turnNow = 3;
-		const squareClass = `.c${tries}r${turnNow}`
-		const squareEl = document.querySelector(squareClass);
-		//right color right place = black border
-		if(board[tries][turnNow]===result[turnNow]) {
-			squareEl.style.border = 'black solid 2px'
+		if (turn==='A') { //once filled in all 4 chosen colors
+			for (let i=0; i<4;i++) { //iterate 4 times
+				const squareClass = `.c${tries}r${i}`
+				const squareEl = document.querySelector(squareClass);
+				//right color right place = black border
+				if(board[tries][i]===result[i]) {
+					squareEl.style.border = 'black solid 2px'
+				}
+				//right color wrong place = white border
+				else if (board[tries][i]===result[0] || board[tries][i]===result[1] ||board[tries][i]===result[2] ||board[tries][i]===result[3]) {
+						squareEl.style.border = 'white solid 2px'
+					 }
+				}
+			}
 		}
-		//right color wrong place = white border
-		else if (board[tries][turnNow]===result[0] || board[tries][turnNow]===result[1] ||board[tries][turnNow]===result[2] ||board[tries][turnNow]===result[3]) {
-			squareEl.style.border = 'white solid 2px'
-		}
-
-	}
