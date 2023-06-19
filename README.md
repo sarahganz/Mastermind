@@ -34,8 +34,7 @@ showing the start game button when won, failed and start of game
 
 
 musts:
-*hints
-*dont allow clicking once won or failed
+*make hints appear only after filling out all 4 choices
 *style css +change sizing +depending on screen size
 *starrt of the game hide colors, only show start button
 

@@ -93,17 +93,20 @@
 					if(COLORS[i][0]===col) {
 						squareEl.style.backgroundColor = COLORS[i][1];
 					}
-					if(0===col)
+					if(col===0) {
 						squareEl.style.backgroundColor = 'grey';
+						squareEl.style.border = 'none';
+					}
 				}
 			})
 		})
+		hints();
 	};
 
 	function renderMessage() {
 		if (state === 1) 
 			messageEl.innerText = `CONGRATS!!
-			YOU WON ON TRY NUMBER ${tries}!!!`
+			YOU WON ON TRY NUMBER ${tries+1}!!!`
 		else if (state === -1) 
 			messageEl.innerText = `Failed... Try again?`	
 		else 
@@ -114,13 +117,13 @@
 	function renderControls() {
 		playAgainBtn.style.visibility = state ? 'visible' : 'hidden';
 		//this is good: its just marked green during writing of code:
-		// document.getElementsByClassName('answer')[0].style.visibility = state ? 'visible' : 'hidden';
+		document.getElementsByClassName('answer')[0].style.visibility = state ? 'visible' : 'hidden';
+		colorBtn.style.visibility = state ? 'hidden' : 'visible';
 	};
 
 	function handleColorClick(evt) {
 		let clickedEl = evt.target.className;
 		const idxEl = colorEls.indexOf(evt.target);
-		console.log(idxEl)
 		if(idxEl === -1) return;
 		let turnNow = 0;
 		if(turn === 'A') turnNow = 0;
@@ -129,13 +132,14 @@
 		else turnNow = 3;
 		board[tries][turnNow] = clickedEl;
 		state = getState();
-		if (turnNow===3) tries+=1;
+		
 		//change turn
 		if(turnNow === 0) turn = 'B';
 		else if(turnNow=== 1) turn = 'C';
 		else if(turnNow=== 2) turn = 'D';
 		else if(turnNow=== 3) turn = 'A';
 		render();
+		if (turnNow===3) tries+=1;
 	}
 
 	function getState() {
@@ -149,4 +153,22 @@
 		if((tries===11) && (turn==='D')){
 			return -1;
 		}
+	}
+
+	function hints() {
+		if(turn==='B') turnNow = 0;
+		else if(turn==='C') turnNow = 1;
+		else if(turn==='D') turnNow = 2;
+		else if (turn === 'A') turnNow = 3;
+		const squareClass = `.c${tries}r${turnNow}`
+		const squareEl = document.querySelector(squareClass);
+		//right color right place = black border
+		if(board[tries][turnNow]===result[turnNow]) {
+			squareEl.style.border = 'black solid 2px'
+		}
+		//right color wrong place = white border
+		else if (board[tries][turnNow]===result[0] || board[tries][turnNow]===result[1] ||board[tries][turnNow]===result[2] ||board[tries][turnNow]===result[3]) {
+			squareEl.style.border = 'white solid 2px'
+		}
+
 	}

@@ -84,7 +84,6 @@ body {
 
   #board {
     background-color: grey;
-    color: white;
     display: grid;
     grid-template-columns: repeat(12, auto);
     grid-template-rows: repeat(4, auto);
@@ -94,10 +93,12 @@ body {
     align-self: stretch;
 
   }
-  #board > * {
-    border: rgb(137, 155, 116) 1px solid; 
+  #board > div {
+    /* border: rgb(137, 155, 116) 1px solid;  */
     justify-self: stretch;
     align-self: stretch;
+    /* background-color: rgb(211, 20, 20);
+    padding: 10px; */
   }
 
   .answer {
