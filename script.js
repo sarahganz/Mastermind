@@ -1,13 +1,152 @@
 	/*----- constants -----*/
+	const COLORS = [
+		['green', 'rgb(112, 173, 169)'],
+		['blue', 'rgb(156, 213, 242)'],
+		['purple', 'rgb(178, 167, 211)'],
+		['pink', 'rgb(248, 183, 205)'],
+		['orange', 'rgb(251, 197, 159)'],
+		['yellow', 'rgb(246, 239, 181)'],
+	]
+	
 
 
 	/*----- state variables -----*/
-
+	let result;  //the random generated answer
+	let board; //2D array
+	let turn; //which letter A, B, C or D
+	let state; //null = no winner; 1 = winner; -1 = failed the game
+	let tries = 0; //amount of tried inputs
 
 	/*----- cached elements  -----*/
-
-
+	const messageEl = document.querySelector('.message');
+	const playAgainBtn = document.querySelector('.start');
+	const colorBtn = document.getElementById('colors');
+	const colorEls = [...document.querySelectorAll('#colors > div')];
+	const resultEl = document.querySelectorAll('.answer > *')
+	
 	/*----- event listeners -----*/
+	playAgainBtn.addEventListener('click', init);
+	colorBtn.addEventListener('click', handleColorClick);
 
 
 	/*----- functions -----*/
+	init();
+	function init() {
+		board = [
+			[0, 0, 0, 0],  // col 0
+			[0, 0, 0, 0],  // col 1
+			[0, 0, 0, 0],  // col 2
+			[0, 0, 0, 0],  // col 3
+			[0, 0, 0, 0],  // col 4
+			[0, 0, 0, 0],  // col 5
+			[0, 0, 0, 0],  // col 6
+			[0, 0, 0, 0],  // col 7
+			[0, 0, 0, 0],  // col 8
+			[0, 0, 0, 0],  // col 9
+			[0, 0, 0, 0],  // col 10
+			[0, 0, 0, 0],  // col 11
+		  ];
+		
+		result = randResult();
+		updateResultColors();
+		turn = "A";
+		tries = 0;
+		state = null;
+		render();
+	}
+
+	function randResult() {
+		let res = [];
+		for(let i=0; i<4; i++) {
+			let random = Math.floor(Math.random() * 6)
+			res.push(COLORS[random][0]);
+		}
+		return res;
+	}
+
+	function updateResultColors() {
+		for(let i=0; i<4; i++) {
+			let ans = ".answer"+i;
+			let resEl = document.querySelector(ans);
+			for(let b=0; b<6; b++) {
+				if(COLORS[b][0]===result[i])
+					resEl.style.backgroundColor = COLORS[b][1];
+			}
+		}
+	}
+
+	function render() {
+		renderBoard();
+		renderMessage();
+		renderControls();
+	};
+
+	function renderBoard() {
+		board.forEach(function(arr, arrIdx) {
+			arr.forEach(function(square, squareIdx) {
+				const squareClass = `.c${arrIdx}r${squareIdx}`
+				const squareEl = document.querySelector(squareClass);
+				const col = board[arrIdx][squareIdx];
+				
+				for(let i=0; i<6; i++) {
+					
+					if(COLORS[i][0]===col) {
+						squareEl.style.backgroundColor = COLORS[i][1];
+					}
+					if(0===col)
+						squareEl.style.backgroundColor = 'grey';
+				}
+			})
+		})
+	};
+
+	function renderMessage() {
+		if (state === 1) 
+			messageEl.innerText = `CONGRATS!!
+			YOU WON ON TRY NUMBER ${tries}!!!`
+		else if (state === -1) 
+			messageEl.innerText = `Failed... Try again?`	
+		else 
+			messageEl.innerText = `Click on a color to choose for:
+			${turn}`;
+	};
+	
+	function renderControls() {
+		playAgainBtn.style.visibility = state ? 'visible' : 'hidden';
+		//this is good: its just marked green during writing of code:
+		// document.getElementsByClassName('answer')[0].style.visibility = state ? 'visible' : 'hidden';
+	};
+
+	function handleColorClick(evt) {
+		let clickedEl = evt.target.className;
+		const idxEl = colorEls.indexOf(evt.target);
+		console.log(idxEl)
+		if(idxEl === -1) return;
+		let turnNow = 0;
+		if(turn === 'A') turnNow = 0;
+		else if(turn==='B') turnNow = 1;
+		else if(turn==='C') turnNow = 2;
+		else turnNow = 3;
+		board[tries][turnNow] = clickedEl;
+		state = getState();
+		if (turnNow===3) tries+=1;
+		//change turn
+		if(turnNow === 0) turn = 'B';
+		else if(turnNow=== 1) turn = 'C';
+		else if(turnNow=== 2) turn = 'D';
+		else if(turnNow=== 3) turn = 'A';
+		render();
+	}
+
+	function getState() {
+		let test=0;
+		for(let i=0; i<4; i++) {
+			if(result[i]===board[tries][i]) test+=1;
+		}
+		if(test===4) {
+			return 1;
+		}
+		if((tries===11) && (turn==='D')){
+			return -1;
+		}
+	}
