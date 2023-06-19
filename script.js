@@ -30,6 +30,8 @@
 
 
 	/*----- functions -----*/
+	// playAgainBtn.style.visibility = 'visible';
+	// colorBtn.style.visibility = 'hidden';
 	init();
 	function init() {
 		board = [
@@ -53,6 +55,7 @@
 		tries = 0;
 		state = null;
 		render();
+
 	}
 
 	function randResult() {
@@ -94,7 +97,7 @@
 						squareEl.style.backgroundColor = COLORS[i][1];
 					}
 					if(col===0) {
-						squareEl.style.backgroundColor = 'grey';
+						squareEl.style.backgroundColor = 'rgb(227, 244, 205)';
 						squareEl.style.border = 'none';
 					}
 				}
@@ -119,6 +122,7 @@
 		//this is good: its just marked green during writing of code:
 		document.getElementsByClassName('answer')[0].style.visibility = state ? 'visible' : 'hidden';
 		colorBtn.style.visibility = state ? 'hidden' : 'visible';
+		
 	};
 
 	function handleColorClick(evt) {

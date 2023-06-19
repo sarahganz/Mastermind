@@ -35,12 +35,11 @@ showing the start game button when won, failed and start of game
 
 musts:
 *style css +change sizing +depending on screen size
-*start of the game hide colors, only show start button
+*make code more efficient and less code typed
 
 +) extras:
 
 *whichever letter has to be filled in-> the font-size should grow on its turn
-*instead of hints board => to have each of the squared circled with red or white, change the boards frame color(not white)
 *having players drag the color buttons to the place they choose- in the same order or in no particlar order
 *choice to have a game timer- to have failed game if timer gets to 0
 *have a message on board :red=right place , right color  &   white=right color, wrong place or instructions bring to a different html page with typed instructions and link to youtube video or paste video there

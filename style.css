@@ -17,19 +17,15 @@ body {
     "alphab board answ"
     "messg messg messg"
     "colrs colrs colrs"
-    ". buttn ."
-    ;
-    /* flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-    background-color: rgb(211, 240, 176);
+    ". buttn .";
+    background-color: rgb(227, 244, 205);
     margin: 13px;
   }
-
+  /* rgb(211, 240, 176) */
   header {
     grid-area: header;
     font-size: 6vmin;
-    color: black;
+    color: rgb(119, 137, 96);
     font-weight: 1200;
     letter-spacing: 1vmin;
     justify-self: center;
@@ -39,7 +35,7 @@ body {
   .instructions {
     grid-area: instruct;
     font-size: 2vmin;
-    color: darkgrey;
+    color: rgb(119, 137, 96);
     font-weight: 500;
     font-style: italic;
     justify-self: center;
@@ -54,7 +50,8 @@ body {
   .numbers {
     grid-area: numbers;
     background-color: rgb(176, 175, 175);
-    color: rgb(137, 155, 116);
+    color: rgb(119, 137, 96);
+    border: 1vmin solid rgb(119, 137, 96);
     display: flex;
     flex-direction: row;
     /* height: 25px;
@@ -71,10 +68,11 @@ body {
   .alphabet {
     grid-area: alphab;
     background-color: rgb(176, 175, 175);
-    color: rgb(137, 155, 116);
+    border: 1vmin solid rgb(119, 137, 96);
+    color: rgb(119, 137, 96);
     display: flex;
     flex-direction: column;
-    width: 30px;
+    width: 8vmin;
     justify-content: space-evenly;
     align-items: center;
     justify-self: end;
@@ -83,7 +81,8 @@ body {
   }
 
   #board {
-    background-color: grey;
+    background-color: rgb(119, 137, 96);
+    border: 1vmin solid rgb(119, 137, 96);
     display: grid;
     grid-template-columns: repeat(12, auto);
     grid-template-rows: repeat(4, auto);
@@ -103,10 +102,10 @@ body {
 
   .answer {
     background-color: rgb(176, 175, 175);
-    color: black;
+    border: 1vmin solid rgb(119, 137, 96);
     display: flex;
     flex-direction: column;
-    width: 30px;
+    width: 8vmin;
     justify-content: space-evenly;
     align-items: center;
     justify-self: start;
@@ -115,11 +114,13 @@ body {
 
   }
   .answer>* {
-    height:30px;
-    width: 30px;
+    height: 5vmin;
+    width: 5vmin;
+    border: 0.5vmin solid rgb(119, 137, 96);
   }
 
   .message {
+    color: rgb(119, 137, 96);
     grid-area: messg;
     justify-self: center;
     align-self: center;
@@ -140,36 +141,31 @@ body {
     transition-duration: 100ms;
 
   }
+
+  #colors>* {
+    height: 6vh;
+    width: 6vh;
+    border: 0.5vmin solid rgb(119, 137, 96);
+
+  }
   
   .blue {
     background-color: rgb(156, 213, 242);
-    height: 6vh;
-    width: 6vh;
   }
   .pink {
     background-color: rgb(248, 183, 205);
-    height: 6vh;
-    width: 6vh;
   }
   .purple {
     background-color: rgb(178, 167, 211);
-    height: 6vh;
-    width: 6vh;
   }
   .yellow {
     background-color: rgb(246, 239, 181);
-    height: 6vh;
-    width: 6vh;
   }
   .green {
     background-color: rgb(112, 173, 169);
-    height: 6vh;
-    width: 6vh;
   }
   .orange {
     background-color: rgb(251, 197, 159);
-    height: 6vh;
-    width: 6vh;
   }
 
   .start {
