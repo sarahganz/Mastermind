@@ -1,6 +1,6 @@
 	/*----- constants -----*/
 	const COLORS = [
-		['green', 'rgb(112, 173, 169)'],
+		['green', 'rgb(112, 173, 153)'],
 		['blue', 'rgb(156, 213, 242)'],
 		['purple', 'rgb(178, 167, 211)'],
 		['pink', 'rgb(248, 183, 205)'],
@@ -30,8 +30,6 @@
 
 
 	/*----- functions -----*/
-	// playAgainBtn.style.visibility = 'visible';
-	// colorBtn.style.visibility = 'hidden';
 	init();
 	function init() {
 		board = [
@@ -120,7 +118,10 @@
 	function renderControls() {
 		playAgainBtn.style.visibility = state ? 'visible' : 'hidden';
 		//this is good: its just marked green during writing of code:
-		document.getElementsByClassName('answer')[0].style.visibility = state ? 'visible' : 'hidden';
+		document.getElementsByClassName('answer0')[0].style.visibility = state ? 'visible' : 'hidden';
+		document.getElementsByClassName('answer1')[0].style.visibility = state ? 'visible' : 'hidden';
+		document.getElementsByClassName('answer2')[0].style.visibility = state ? 'visible' : 'hidden';
+		document.getElementsByClassName('answer3')[0].style.visibility = state ? 'visible' : 'hidden';
 		colorBtn.style.visibility = state ? 'hidden' : 'visible';
 		
 	};
@@ -166,11 +167,11 @@
 				const squareEl = document.querySelector(squareClass);
 				//right color right place = black border
 				if(board[tries][i]===result[i]) {
-					squareEl.style.border = 'black solid 2px'
+					squareEl.style.border = 'black solid 0.6vmin'
 				}
 				//right color wrong place = white border
 				else if (board[tries][i]===result[0] || board[tries][i]===result[1] ||board[tries][i]===result[2] ||board[tries][i]===result[3]) {
-						squareEl.style.border = 'white solid 2px'
+						squareEl.style.border = 'white solid 0.6vmin'
 					 }
 				}
 			}

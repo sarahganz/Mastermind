@@ -7,7 +7,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 4fr 1.3fr 1fr 1.5fr;
@@ -19,24 +19,24 @@ body {
     "messg messg messg"
     "colrs colrs colrs"
     ". buttn .";
-    background-color: rgb(227, 244, 205);
+    background-color: rgb(55, 59, 49);
     margin: 25px;
   }
   /* rgb(211, 240, 176) */
   header {
     grid-area: header;
     font-size: 6vmin;
-    color: rgb(85, 98, 68);
-    font-style: bold;
+    color: rgb(227, 244, 205);
+    /* font-style: bold; */
     font-weight: 900;
-    letter-spacing: 1vmin;
+    letter-spacing: 1.5vmin;
     justify-self: center;
     align-self: end;
   }
 
   .instructions {
     grid-area: instruct;
-    font-size: 2vmin;
+    font-size: 3vmin;
     color: rgb(119, 137, 96);
     font-weight: 500;
     font-style: italic;
@@ -52,37 +52,51 @@ body {
   }
 
   .numbers {
+    height: 8vmin;
     grid-area: numbers;
-    background-color: rgba(180, 194, 162, 0.88);
+    background-color: rgb(227, 244, 205);
     color: rgb(119, 137, 96);
     border: 1vmin solid rgb(119, 137, 96);
     border-bottom: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    justify-self: stretch;
-    align-self: stretch;
+    justify-content: space-between;
+    align-items: center; /* numbers to be verically centered */
+    font-size: 2.5vmin;
+    align-self: end;
+    border-top-right-radius: 2vmin;
+    border-top-left-radius: 2vmin;
+  }
+
+  @media only screen and (min-width: 481px){
+    .numbers {
+      padding-right: 1.4vmin;
+      padding-left: 1.4vmin;
+    }
+    
+  }
+
+  .numbers>div {
+    width: 2.7vmax;
     text-align: center;
-    font-size: 20px;
 
   }
 
   .alphabet {
     grid-area: alphab;
-    background-color: rgba(180, 194, 162, 0.88);
+    background-color: rgb(227, 244, 205);
     border: 1vmin solid rgb(119, 137, 96);
     border-right: none;
     color: rgb(119, 137, 96);
     display: flex;
     flex-direction: column;
     width: 8vmin;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     justify-self: end;
-    font-size: 25px;
-    /* border-radius: 2vmin; */
-
+    font-size: 3.5vmin;
+    border-top-left-radius: 2vmin;
+    border-bottom-left-radius: 2vmin;
   }
 
   #board {
@@ -95,50 +109,49 @@ body {
     grid-area: board;
     justify-self: stretch;
     align-self: stretch;
-    
-    /* border-radius: 2vmin; */
-
   }
   #board > div {
-    /* border: rgb(137, 155, 116) 1px solid;  */
-    /* justify-self: stretch;
-    align-self: stretch; */
-    /* background-color: rgb(211, 20, 20);
-    padding: 10px; */
-    
     border-radius: 50%;
+    height: 4.5vmin;
+    width: 4.5vmin;
+    justify-self: center;
+    align-self: center;
+    /* border-top: 1px solid rgb(216, 35, 35); */
   }
 
   .answer {
-    background-color: rgba(180, 194, 162, 0.88);
+    background-color:rgb(227, 244, 205);
     border: 1vmin solid rgb(119, 137, 96);
     border-left: none;
     display: flex;
     flex-direction: column;
     width: 8vmin;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     justify-self: start;
     grid-area: answ;
-    /* justify-self: start; */
-
+    border-top-right-radius: 2vmin;
+    border-bottom-right-radius: 2vmin;
   }
   .answer>* {
-    height: 5vmin;
-    width: 5vmin;
+    height: 4.5vmin;
+    width: 4.5vmin;
+    justify-self: center;
+    align-self: center;
     border: 0.5vmin solid rgb(119, 137, 96);
     border-radius: 50%;
   }
 
   .message {
-    color: rgb(85, 98, 68);
+    color: rgb(227, 244, 205);
     grid-area: messg;
     justify-self: center;
     align-self: center;
     text-align: center;
-    line-height: 120%;
+    line-height: 130%;
     margin-bottom: -1vmax;
-    font-weight: 900;
+    font-size: 3.5vmin;
+    font-weight: 300;
   }
 
   #colors {
@@ -160,7 +173,7 @@ body {
   #colors>* {
     height: 7vmax;
     width: 7vmax;
-    border: 0.5vmin solid rgb(119, 137, 96);
+    border: 0.5vmin solid rgb(227, 244, 205);
     border-radius: 50%;
 
   }
@@ -178,7 +191,7 @@ body {
     background-color: rgb(246, 239, 181);
   }
   .green {
-    background-color: rgb(112, 173, 169);
+    background-color: rgb(112, 173, 153);
   }
   .orange {
     background-color: rgb(251, 197, 159);
@@ -186,20 +199,22 @@ body {
 
   .start {
     grid-area: buttn;
-    height: 6vh;
-    width: 20vh;
-    border: 0.5vmin solid rgb(85, 98, 68);
-    border-radius: 4vmin;
-    color: rgb(85, 98, 68);
-    background-color: rgb(227, 244, 205);
+    height: 10vmin;
+    width: 30vmin;
+    border: 0.5vmin solid rgb(227, 244, 205);
+    border-radius: 5vmin;
+    color: rgb(227, 244, 205);
+    background-color: rgb(85, 98, 68);
     justify-self: center;
     align-self: start;
-    margin-top: -4vmax;
+    margin-top: -2vmax;
+    font-size: 3.5vmin;
+    font-weight: 300;
   }
 
   .start:hover {
-    background-color: rgb(85, 98, 68);
-    color: rgb(227, 244, 205);
+    background-color: rgb(227, 244, 205);
+    color: rgb(85, 98, 68);
     transform: scale(1.1);
     transition: transform 150ms ease-in;
   }

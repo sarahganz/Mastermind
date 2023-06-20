@@ -34,10 +34,7 @@ showing the start game button when won, failed and start of game
 
 
 musts:
-*style css +change sizing +depending on screen size: 2media query screen
-   circles when on smaller screen on board=ovals
-   font weight-not working
-   get the numbers to be above circles of board
+*maybe lines between each chosen combination?
 *make code more efficient and less code typed
 
 
