@@ -5,15 +5,13 @@
 
 body {
     height: 100vh;
-    margin: 0;
     font-family: 'Josefin Sans', sans-serif;
-    /* font-family: 'Open Sans', sans-serif; */
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 4fr 1.3fr 1fr 1.5fr;
     grid-template-areas: 
     "header header header"
-    "instruct instruct instruct"
+    "instruct instruct time"
     ". numbers ."
     "alphab board answ"
     "messg messg messg"
@@ -22,12 +20,11 @@ body {
     background-color: rgb(55, 59, 49);
     margin: 25px;
   }
-  /* rgb(211, 240, 176) */
+
   header {
     grid-area: header;
     font-size: 6vmin;
     color: rgb(227, 244, 205);
-    /* font-style: bold; */
     font-weight: 900;
     letter-spacing: 1.5vmin;
     justify-self: center;
@@ -46,9 +43,29 @@ body {
     
   }
   .instructions:hover {
-    /* font-size: 2.3vmin; */
     text-decoration: underline;
     transition-duration: 100ms;
+  }
+
+  p {
+    grid-area: time;
+    font-size: 3vmin;
+    color: rgb(119, 137, 96);
+    font-weight: 500;
+    background-color: rgb(227, 244, 205);
+    /* justify-self: center;
+    align-self: center;
+    justify-content: center; */
+    border: 0.5vmin solid rgb(119, 137, 96);
+    border-radius: 2vmin;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4vmin;
+    height: 10vmin;
+    width: 12vmin;
+    margin-left: -7vmin;
+    margin-top: 6vmin;
+    padding: 1vmin;
   }
 
   .numbers {
@@ -61,7 +78,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; /* numbers to be verically centered */
+    align-items: center; 
     font-size: 2.5vmin;
     align-self: end;
     border-top-right-radius: 2vmin;
@@ -116,7 +133,6 @@ body {
     width: 4.5vmin;
     justify-self: center;
     align-self: center;
-    /* border-top: 1px solid rgb(216, 35, 35); */
   }
 
   .answer {
@@ -150,8 +166,9 @@ body {
     text-align: center;
     line-height: 130%;
     margin-bottom: -1vmax;
-    font-size: 3.5vmin;
-    font-weight: 300;
+    font-size: 3vmin;
+    font-style: normal;
+    font-weight: 100;
   }
 
   #colors {

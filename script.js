@@ -30,8 +30,41 @@
 
 
 	/*----- functions -----*/
+	let timer; 
+	let timeLeft; 
+
+	function gameOver() {
+  		clearInterval(timer);
+ 		// playAgainBtn.style.visibility = 'visible';
+		state = -1;
+		render();
+	}
+
+	function updateTimer() {
+		if(state!==1 && state!==-1) {
+			timeLeft -= 1;
+			if(timeLeft >= 0)
+				document.getElementById('timer').innerText = timeLeft;
+			else {
+				gameOver();
+			}
+		}
+	}
+
+	function start() {
+		timeLeft = 61;
+		timer = setInterval(updateTimer, 1000);
+		// updateTimer();
+		playAgainBtn.style.visibility = 'hidden';
+	}
+
+
+
 	init();
+	
+	
 	function init() {
+		start();
 		board = [
 			[0, 0, 0, 0],  // col 0
 			[0, 0, 0, 0],  // col 1
@@ -107,7 +140,8 @@
 	function renderMessage() {
 		if (state === 1) 
 			messageEl.innerText = `CONGRATS!!
-			YOU WON ON TRY NUMBER ${tries+1}!!!`
+			YOU WON ON TRY NUMBER ${tries+1}!
+			WITH ${timeLeft} SECONDS LEFT!`
 		else if (state === -1) 
 			messageEl.innerText = `Failed... Try again?`	
 		else 

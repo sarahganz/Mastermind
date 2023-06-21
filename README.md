@@ -35,18 +35,15 @@ showing the start game button when won, failed and start of game
 
 musts:
 *maybe lines between each chosen combination?
+*when a color is chosen, the rest colors shouldnt move with it
 *make code more efficient and less code typed
 
 
 +) extras:
-
-*whichever letter has to be filled in-> the font-size should grow on its turn
 *having players drag the color buttons to the place they choose- in the same order or in no particlar order
 *choice to have a game timer- to have failed game if timer gets to 0
-*have a message on board :red=right place , right color  &   white=right color, wrong place or instructions bring to a different html page with typed instructions and link to youtube video or paste video there
 *playing with a friend - button at start of game to play with computer of friend : friend would choose colours and then press button to hide them. then friend would be choosing red or white to give the hints
 *backwards button, if they wanna change their mind on the last one they submitted or for more than one of the colors
-*choose amouunt of colors shown- level of difficulty(max of)
 *giving a hint is showing one of the colors -button to ask help
 
 MVP:
