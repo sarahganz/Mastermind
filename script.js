@@ -16,52 +16,24 @@
 	let turn; //which letter A, B, C or D
 	let state; //null = no winner; 1 = winner; -1 = failed the game
 	let tries = 0; //amount of tried inputs
+	let timer; 
+	let timeLeft; 
 
 	/*----- cached elements  -----*/
 	const messageEl = document.querySelector('.message');
 	const playAgainBtn = document.querySelector('.start');
 	const colorBtn = document.getElementById('colors');
 	const colorEls = [...document.querySelectorAll('#colors > div')];
-	const resultEl = document.querySelectorAll('.answer > *')
+	const resultEl = document.querySelectorAll('.answer > *');
 	
 	/*----- event listeners -----*/
 	playAgainBtn.addEventListener('click', init);
 	colorBtn.addEventListener('click', handleColorClick);
 
 
+
 	/*----- functions -----*/
-	let timer; 
-	let timeLeft; 
-
-	function gameOver() {
-  		clearInterval(timer);
- 		// playAgainBtn.style.visibility = 'visible';
-		state = -1;
-		render();
-	}
-
-	function updateTimer() {
-		if(state!==1 && state!==-1) {
-			timeLeft -= 1;
-			if(timeLeft >= 0)
-				document.getElementById('timer').innerText = timeLeft;
-			else {
-				gameOver();
-			}
-		}
-	}
-
-	function start() {
-		timeLeft = 61;
-		timer = setInterval(updateTimer, 1000);
-		// updateTimer();
-		playAgainBtn.style.visibility = 'hidden';
-	}
-
-
-
 	init();
-	
 	
 	function init() {
 		start();
@@ -157,6 +129,10 @@
 		document.getElementsByClassName('answer2')[0].style.visibility = state ? 'visible' : 'hidden';
 		document.getElementsByClassName('answer3')[0].style.visibility = state ? 'visible' : 'hidden';
 		colorBtn.style.visibility = state ? 'hidden' : 'visible';
+		if (state===1 || state===-1) {
+			clearInterval(timer);
+		}
+		
 		
 	};
 
@@ -210,3 +186,27 @@
 				}
 			}
 		}
+
+		function gameOver() {
+			clearInterval(timer);
+		  state = -1;
+		  render();
+	  }
+  
+	  function updateTimer() {
+		  if(state!==1 && state!==-1) {
+			  timeLeft -= 1;
+			  
+			  if(timeLeft >= 0)
+				  document.getElementById('timer').innerText = timeLeft;
+			  else {
+				  gameOver();
+			  }
+		  }
+	  }
+  
+	  function start() {
+		  timeLeft = 61;
+		  timer = setInterval(updateTimer, 1000);
+		
+	  }

@@ -53,9 +53,6 @@ body {
     color: rgb(119, 137, 96);
     font-weight: 500;
     background-color: rgb(227, 244, 205);
-    /* justify-self: center;
-    align-self: center;
-    justify-content: center; */
     border: 0.5vmin solid rgb(119, 137, 96);
     border-radius: 2vmin;
     text-align: center;
