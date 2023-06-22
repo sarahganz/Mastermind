@@ -37,6 +37,7 @@ musts:
 *maybe lines between each chosen combination?
 *when a color is chosen, the rest colors shouldnt move with it
 *make code more efficient and less code typed
+*beginnning of game to have start button and colors ineffective
 
 
 +) extras:

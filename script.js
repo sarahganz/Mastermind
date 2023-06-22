@@ -33,7 +33,9 @@
 
 
 	/*----- functions -----*/
-	init();
+	playAgainBtn.style.visibility = 'visible';
+	colorBtn.style.visibility = 'hidden';
+
 	
 	function init() {
 		start();
@@ -206,7 +208,8 @@
 	  }
   
 	  function start() {
-		  timeLeft = 61;
+		  timeLeft = 60;
+		  document.getElementById('timer').innerText = timeLeft;
 		  timer = setInterval(updateTimer, 1000);
 		
 	  }
