@@ -33,19 +33,19 @@ showing the start game button when won, failed and start of game
 
 
 
-musts:
-*maybe lines between each chosen combination?
-*when a color is chosen, the rest colors shouldnt move with it
-*make code more efficient and less code typed
-*beginnning of game to have start button and colors ineffective
-
-
 +) extras:
 *having players drag the color buttons to the place they choose- in the same order or in no particlar order
 *choice to have a game timer- to have failed game if timer gets to 0
 *playing with a friend - button at start of game to play with computer of friend : friend would choose colours and then press button to hide them. then friend would be choosing red or white to give the hints
 *backwards button, if they wanna change their mind on the last one they submitted or for more than one of the colors
 *giving a hint is showing one of the colors -button to ask help
+
+*cursor to pointer when hover
+*add left top instructions bar
+*center timer and instructions- absolute
+*add animation- colors jumping up down when hover and colors fliping when won
+
+
 
 MVP:
 board

@@ -177,19 +177,27 @@ body {
     gap: 1vmin;
   }
 
-  #colors>*:hover{
-    height: 6vmax;
-    width: 6vmax;
-    transition-duration: 100ms;
-
+  #colors>section {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  #colors>* {
+  .color-wrap>div {
     height: 7vmax;
     width: 7vmax;
     border: 0.5vmin solid rgb(227, 244, 205);
     border-radius: 50%;
+    
+  }
 
+  .color-wrap>div:hover{
+    
+    height: 6vmax;
+    width: 6vmax;
+    transition-duration: 100ms;
   }
   
   .blue {

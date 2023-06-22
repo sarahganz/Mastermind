@@ -23,7 +23,7 @@
 	const messageEl = document.querySelector('.message');
 	const playAgainBtn = document.querySelector('.start');
 	const colorBtn = document.getElementById('colors');
-	const colorEls = [...document.querySelectorAll('#colors > div')];
+	const colorEls = [...document.querySelectorAll('.color-wrap > div')];
 	const resultEl = document.querySelectorAll('.answer > *');
 	
 	/*----- event listeners -----*/
@@ -140,6 +140,7 @@
 
 	function handleColorClick(evt) {
 		let clickedEl = evt.target.className;
+		console.log(clickedEl)
 		const idxEl = colorEls.indexOf(evt.target);
 		if(idxEl === -1) return;
 		let turnNow = 0;
