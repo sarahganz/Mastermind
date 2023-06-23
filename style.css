@@ -137,6 +137,7 @@ body {
     justify-self: stretch;
     align-self: stretch;
   }
+  
   #board > div {
     border-radius: 50%;
     height: 4.5vmin;

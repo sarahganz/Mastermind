@@ -99,12 +99,8 @@
 				const squareClass = `.c${arrIdx}r${squareIdx}`
 				const squareEl = document.querySelector(squareClass);
 				const col = board[arrIdx][squareIdx];
-				
 				for(let i=0; i<6; i++) {
-					
-					if(COLORS[i][0]===col) {
-						squareEl.style.backgroundColor = COLORS[i][1];
-					}
+					if(COLORS[i][0]===col) squareEl.style.backgroundColor = COLORS[i][1];
 					if(col===0) {
 						squareEl.style.backgroundColor = 'rgb(227, 244, 205)';
 						squareEl.style.border = 'none';
@@ -129,22 +125,12 @@
 	
 	function renderControls() {
 		playAgainBtn.style.visibility = state ? 'visible' : 'hidden';
-		//this is good: its just marked green during writing of code:
 		document.getElementsByClassName('answer0')[0].style.visibility = state ? 'visible' : 'hidden';
 		document.getElementsByClassName('answer1')[0].style.visibility = state ? 'visible' : 'hidden';
 		document.getElementsByClassName('answer2')[0].style.visibility = state ? 'visible' : 'hidden';
 		document.getElementsByClassName('answer3')[0].style.visibility = state ? 'visible' : 'hidden';
 		colorBtn.style.visibility = state ? 'hidden' : 'visible';
-		if (state===1 || state===-1) {
-			clearInterval(timer);
-		}
-		// if (state===1){
-		// 	document.getElementsByClassName('answer0')[0].style.transform = 'preserve-3d';
-		// 	document.getElementsByClassName('answer1')[0].style.transform = 'preserve-3d';
-		// 	document.getElementsByClassName('answer2')[0].style.transform = 'preserve-3d';
-		// 	document.getElementsByClassName('answer3')[0].style.transform = 'preserve-3d';
-		// }
-		
+		if (state===1 || state===-1) clearInterval(timer);
 	};
 
 	function handleColorClick(evt) {
@@ -158,8 +144,6 @@
 		else turnNow = 3;
 		board[tries][turnNow] = clickedEl;
 		state = getState();
-		
-		//change turn
 		if(turnNow === 0) turn = 'B';
 		else if(turnNow=== 1) turn = 'C';
 		else if(turnNow=== 2) turn = 'D';
@@ -183,17 +167,13 @@
 
 	function hints() {
 		if (turn==='A') { //once filled in all 4 chosen colors
-			for (let i=0; i<4;i++) { //iterate 4 times
+			for (let i=0; i<4;i++) {
 				const squareClass = `.c${tries}r${i}`
 				const squareEl = document.querySelector(squareClass);
 				//right color right place = black border
-				if(board[tries][i]===result[i]) {
-					squareEl.style.border = 'black solid 0.6vmin'
-				}
+				if(board[tries][i]===result[i]) squareEl.style.border = 'black solid 0.6vmin';
 				//right color wrong place = white border
-				else if (board[tries][i]===result[0] || board[tries][i]===result[1] ||board[tries][i]===result[2] ||board[tries][i]===result[3]) {
-						squareEl.style.border = 'white solid 0.6vmin'
-					 }
+				else if (board[tries][i]===result[0] || board[tries][i]===result[1] ||board[tries][i]===result[2] ||board[tries][i]===result[3]) squareEl.style.border = 'white solid 0.6vmin';
 				}
 			}
 		}
