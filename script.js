@@ -35,6 +35,10 @@
 	/*----- functions -----*/
 	playAgainBtn.style.visibility = 'visible';
 	colorBtn.style.visibility = 'hidden';
+	document.getElementsByClassName('answer0')[0].style.visibility = state ? 'visible' : 'hidden';
+	document.getElementsByClassName('answer1')[0].style.visibility = state ? 'visible' : 'hidden';
+	document.getElementsByClassName('answer2')[0].style.visibility = state ? 'visible' : 'hidden';
+	document.getElementsByClassName('answer3')[0].style.visibility = state ? 'visible' : 'hidden';
 
 	
 	function init() {
@@ -134,13 +138,17 @@
 		if (state===1 || state===-1) {
 			clearInterval(timer);
 		}
-		
+		// if (state===1){
+		// 	document.getElementsByClassName('answer0')[0].style.transform = 'preserve-3d';
+		// 	document.getElementsByClassName('answer1')[0].style.transform = 'preserve-3d';
+		// 	document.getElementsByClassName('answer2')[0].style.transform = 'preserve-3d';
+		// 	document.getElementsByClassName('answer3')[0].style.transform = 'preserve-3d';
+		// }
 		
 	};
 
 	function handleColorClick(evt) {
 		let clickedEl = evt.target.className;
-		console.log(clickedEl)
 		const idxEl = colorEls.indexOf(evt.target);
 		if(idxEl === -1) return;
 		let turnNow = 0;
@@ -212,5 +220,4 @@
 		  timeLeft = 60;
 		  document.getElementById('timer').innerText = timeLeft;
 		  timer = setInterval(updateTimer, 1000);
-		
 	  }

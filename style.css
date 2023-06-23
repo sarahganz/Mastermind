@@ -11,7 +11,7 @@ body {
     grid-template-rows: 1fr 1fr 1fr 4fr 1.3fr 1fr 1.5fr;
     grid-template-areas: 
     "header header header"
-    "instruct instruct time"
+    "instruct instruct instruct"
     ". numbers ."
     "alphab board answ"
     "messg messg messg"
@@ -23,7 +23,7 @@ body {
 
   header {
     grid-area: header;
-    font-size: 6vmin;
+    font-size: 7vmin;
     color: rgb(227, 244, 205);
     font-weight: 900;
     letter-spacing: 1.5vmin;
@@ -48,7 +48,7 @@ body {
   }
 
   p {
-    grid-area: time;
+    /* grid-area: time; */
     font-size: 3vmin;
     color: rgb(227, 244, 205);
     font-weight: 500;
@@ -60,10 +60,23 @@ body {
     line-height: 4vmin;
     height: 10vmin;
     width: 12vmin;
-    margin-left: -7vmin;
-    margin-top: 6vmin;
     padding: 1vmin;
+    position: absolute;
+    top: 13vmax;
+    left: auto;
+    right: 4vmax;
+    bottom: auto;
+    
   }
+
+  @media only screen and (min-width: 1024px){
+    p {
+      top: 8vmax;
+      left: auto;
+      right: 4max;
+      bottom: auto;
+    }
+  } 
 
   .numbers {
     height: 8vmin;
@@ -152,7 +165,17 @@ body {
     justify-self: center;
     align-self: center;
     border: 0.5vmin solid rgb(119, 137, 96);
-    border-radius: 50%;
+    border-radius: 30%;
+    animation: rotation 2s infinite linear;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
   }
 
   .message {
@@ -198,6 +221,7 @@ body {
     height: 6vmax;
     width: 6vmax;
     transition-duration: 100ms;
+    cursor: pointer;
   }
   
   .blue {
@@ -239,4 +263,5 @@ body {
     color: rgb(85, 98, 68);
     transform: scale(1.1);
     transition: transform 150ms ease-in;
+    cursor: pointer;
   }

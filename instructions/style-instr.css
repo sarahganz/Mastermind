@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    /* border: 1px red solid */
 }
 
 body {
@@ -11,12 +10,14 @@ body {
     color: rgb(227, 244, 205);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    margin: 6vmin;
   }
 
 header {
-    font-size: 5vmin;
+    font-size: 4vmin;
+    height: 15vmin;
 }
 
 .instructions {
@@ -28,7 +29,6 @@ header {
     justify-self: center;
     align-self: center;
     text-decoration: none;
-    
   }
   .instructions:hover {
     text-decoration: underline;
@@ -53,4 +53,32 @@ header {
         width: auto;
         height: auto;
     }
+}
+
+.tips {
+  font-size: 3vmin;
+  color: rgba(119, 137, 96, 0.5);
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 5vmin;
+  width: 35vmin;
+  padding: 1vmin;
+  margin-top: 5vmin;
+  margin-bottom: 5vmin;
+}
+
+#black {
+    border: 0.5vmin solid black;
+    border-radius: 2vmin;
+}
+
+#white {
+  border: 0.5vmin solid white;
+  border-radius: 2vmin;
+}
+
+#blank {
+  border: 0.5vmin solid rgb(85, 98, 68);
+  border-radius: 2vmin;
 }
