@@ -71,7 +71,7 @@ body {
 
   @media only screen and (min-width: 1024px){
     p {
-      top: 8vmax;
+      top: 6vmax;
       left: auto;
       right: 4max;
       bottom: auto;

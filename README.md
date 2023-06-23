@@ -1,6 +1,41 @@
-Mastermind game
+# Sarah Ganz SEI-Project 1-Mastermind
 
-pseudocode:
+## Game Description - Mastermind
+Mastermind or Master Mind is a code-breaking game for two players invented in Israel. It resembles an earlier pencil and paper game called Bulls and Cows that may date back a century.
+The game was invented in 1970 by Mordecai Meirowitz.
+The object of Mastermind is to guess a secret code consisting of a series of 4 colored pegs. Each guess results in feedback narrowing down the possibilities of the code.
+In this version of Mastermind the winner is the player who solves the secret code with the least amount of guesses and before the timer runs out.
+After each chosen combination of four colors, the player will get feedback according to his choice.
+Black border means: it is the right color and right place. White border means: it is the right color but on the wrong place. No border means: it is the wrong color and wrong place.
+
+## Game pictures
+![board state 1](./pics-board/1.png)
+![board state 2](./pics-board/2.png)
+
+
+
+
+## Technologies Used
+
+## Challenging Code Parts
+
+## Link to Game
+
+## Next Steps
+
+
+
+
+
+
+
+
+
+
+
+
+
+## pseudocode
 
 1) constants:
 define colors object
@@ -30,10 +65,6 @@ revealing answer when won
 comparison to the answer (if won & what hints to change)
 giving the hints to the hints board
 showing the start game button when won, failed and start of game
-
-README
-
-
 
 MVP:
 board
