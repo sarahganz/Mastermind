@@ -19,7 +19,7 @@ This shows you what happens after clicking PLAY on the main page. The timer of 6
 ![board state 5](./pics-board/5.png)
 This shows that after choosing the four color options by clicking on them, the borders around the circles on the board will be displayed to give you the feedback.
 ![board state 6](./pics-board/6.png)
-This shows you when you have found teh color combination in time so you have won. 
+This shows you when you have found the color combination in time so you have won. 
 ![board state 7](./pics-board/7.png)
 This shows you when you have failed the game by not finding the right combination.
 ![board state 8](./pics-board/8.png)
