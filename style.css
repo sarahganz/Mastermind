@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    /* border: 1px red solid */
 }
 
 body {
@@ -48,7 +47,6 @@ body {
   }
 
   p {
-    /* grid-area: time; */
     font-size: 3vmin;
     color: rgb(227, 244, 205);
     font-weight: 500;
