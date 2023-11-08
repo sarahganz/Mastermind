@@ -38,7 +38,7 @@ I used Javascript for the functionality of the game.
 ![challengeB](./challenging-code/b.png)
 ![challengeC](./challenging-code/c.png)
 ## Link to Game
-https://sarahganz.github.io/project1-mastermind/
+https://sarahganz.github.io/Mastermind/
 
 ## Next Steps
 There are a few ideas that I plan on adding to this game.
